@@ -47,11 +47,13 @@ button {
 /* Formulario */
 
 .Form {
-  width: 100%;
-  max-width: 400px;
-  margin: 50px auto;
+  width: 130%;
+  padding: 100px 0px;
+  max-width: 800px;
+  margin: 200px auto;
   background-color: #fff;
   padding: 20px;
+  display: block;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
@@ -69,18 +71,19 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-color: #4CAF50;
+  border-color: #000000;
   outline: none;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 5px rgba(41, 41, 41,1);
 }
 
-.form-visible {
+#visible {
   display: block;
 }
 
-.form-invisible {
+#invisible {
   display: none;
 }
+
 .noStyle {
   background: none;
   align-self: left;
@@ -91,6 +94,8 @@ input[type="password"]:focus {
   padding: 0;
   font-size: inherit;
   font-family: inherit;
+  max-width: 25%;
+  text-align: left;
 }
 
 

@@ -1,0 +1,18 @@
+[
+    {
+      "user": "admin",
+      "password": "citygameAd",
+      "access": "administration"
+    },
+    {
+      "user": "taller",
+      "password": "citygameTa",
+      "access": "repair"
+    },
+    {
+      "user": "control",
+      "password": "citygameCo",
+      "access": "all"
+    }
+]
+  

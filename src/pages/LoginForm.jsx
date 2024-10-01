@@ -13,7 +13,7 @@ function LoginForm() {
     useEffect(() => {
         const loadUsers = async () => {
             try {
-                const response = await fetch('./database/User.json');
+                const response = await fetch('/database/Users.json');
                 const data = await response.json();
                 setUsers(data); // Suponiendo que el JSON es un array de usuarios
             } catch (error) {
@@ -35,7 +35,7 @@ function LoginForm() {
         }
     };
 
-    const RegisterCredentials = async (user, password) => {
+    const requestChange = async (user) => {
         const existingUser = users.find(cred => cred.user === user);
 
         if (existingUser) {
@@ -77,9 +77,9 @@ function LoginForm() {
         checkCredentials(name, password);
     };
 
-    const handleRegister = (event) => {
+    const handleRequest = (event) => {
         event.preventDefault();
-        RegisterCredentials(name, password);
+        requestChange(name);
     };
 
     // Función para cambiar la visibilidad entre los formularios
@@ -90,8 +90,8 @@ function LoginForm() {
 
     return (
         <div>
-            {/* Formulario de inicio de sesión */}
-            <div className={visible ? 'form-visible' : 'form-invisible'}>
+            
+            <div id={visible ? 'visible' : 'invisible'}>
                 <form onSubmit={handleSubmit} className='Form'>
                     <h2>Inicio de sesión</h2>
                     <label htmlFor="login-name" className='inputLogin'>Usuario</label>
@@ -123,9 +123,12 @@ function LoginForm() {
             </div>
 
             {/* Formulario de registro */}
-            <div className={visible ? 'form-invisible' : 'form-visible'}>
-                <form onSubmit={handleRegister} className="Form">
+            <div id={visible ? 'invisible' : 'visible'}>
+                <form onSubmit={handleRequest} className="Form">
                     <h2>Solicitud de cambio</h2>
+                    <div className="Mensage">
+                        <p></p>
+                    </div>
                     <label htmlFor="register-name" className='inputLogin'>Usuario</label>
                     <input
                         type="text"
@@ -135,14 +138,14 @@ function LoginForm() {
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
-                    <p className="error">Solicitud enviada, Revisar en administracion</p>
+                    <p className="error"></p>
                     <br />
                     <button className="noStyle" type="button" onClick={toggleVisibility}>Iniciar sesión</button>
                     <br />
-                    <button className="submitBtn" type="submit">Registrar</button>
+                    <button className="submitBtn"  type="submit">Solicitar</button>
                 </form>
                 {errorMessage && (
-                    <p className="error">{errorMessage}</p>
+                    <p className='error'>{errorMessage}</p>
                 )}
             </div>
         </div>
