@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Cambiamos a `useNavigate`
+import { useNavigate } from 'react-router-dom';  
 import LoginForm from './LoginForm';
 
 const Button = ({ text, to }) => {
-  const navigate = useNavigate();  // Usamos `useNavigate` en lugar de `useHistory`
+  const navigate = useNavigate(); 
 
   const handleClick = () => {
-    navigate(to);  // Redirige a la ruta proporcionada
+    navigate(to);
   };
   
   if(to == "Login"){
