@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  
 import React from 'react';
-
 // --- //
-import Home from './pages/Home';
+import Home from './pages/Home.jsx';
 // --- //
-import LoginForm from './pages/LoginForm';
+import Login from './pages/Login.jsx';
 
 <script src='./css/App.css'></script>
 function App() {
@@ -14,8 +13,9 @@ function App() {
     
     <Router>
       <Routes>  
-          <Route path='/' element={<LoginForm/>}/>
-          <Route path="/home" element={<Home />} />
+          <Route path='/' element={<Login/>}/>
+          <Route path="/Home" element={<Home />} />
+          
         </Routes>
     </Router>
   );

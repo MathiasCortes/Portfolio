@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ErrorMensage from "../components/ErrorMensage"; // Importar el componente de error
 
 function LoginForm() {
     const [name, setName] = useState('');
@@ -90,7 +91,7 @@ function LoginForm() {
 
     return (
         <div>
-            
+            {/* Formulario de inicio de sesión */}
             <div id={visible ? 'visible' : 'invisible'}>
                 <form onSubmit={handleSubmit} className='Form'>
                     <h2>Inicio de sesión</h2>
@@ -118,11 +119,11 @@ function LoginForm() {
                     <button className="submitBtn" type="submit">Ingresar</button>
                 </form>
                 {errorMessage && (
-                    <p className="error">{errorMessage}</p>
+                    <ErrorMensage nE="Error" error={errorMessage} />
                 )}
             </div>
 
-            {/* Formulario de registro */}
+
             <div id={visible ? 'invisible' : 'visible'}>
                 <form onSubmit={handleRequest} className="Form">
                     <h2>Solicitud de cambio</h2>
@@ -145,7 +146,7 @@ function LoginForm() {
                     <button className="submitBtn"  type="submit">Solicitar</button>
                 </form>
                 {errorMessage && (
-                    <p className='error'>{errorMessage}</p>
+                    <ErrorMensage nE="Error" error={errorMessage} />
                 )}
             </div>
         </div>
