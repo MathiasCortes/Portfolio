@@ -3,8 +3,9 @@ import ErrorMensage from '../components/ErrorMensage'
 
 const Error = () => {
   return (
-    <div className='errorMesage'>
-      
+    <div className='errordiv'>
+      <h1> Ha ocurrido un error</h1>
+      <ErrorMensage nE="404"/>
     </div>
   )
 }

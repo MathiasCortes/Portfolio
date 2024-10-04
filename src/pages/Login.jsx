@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ErrorMensage from "../components/ErrorMensage"; // Importar el componente de error
+import ErrorMensage from "../components/ErrorMensage"; 
 
 function LoginForm() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState(''); // Estado para el mensaje de error
-    const [visible, setVisible] = useState(true); // Estado para la visibilidad del formulario
-    const [users, setUsers] = useState([]); // Estado para los usuarios
+    const [errorMessage, setErrorMessage] = useState('');
+    const [visible, setVisible] = useState(true); 
+    const [users, setUsers] = useState([]); 
     const navigate = useNavigate();
 
-    // Cargar los usuarios desde el archivo JSON
+
     useEffect(() => {
         const loadUsers = async () => {
             try {
                 const response = await fetch('/database/Users.json');
                 const data = await response.json();
-                setUsers(data); // Suponiendo que el JSON es un array de usuarios
+                setUsers(data); 
             } catch (error) {
                 console.error('Error al cargar los usuarios:', error);
             }
@@ -30,29 +30,21 @@ function LoginForm() {
 
         if (userData) {
             console.log('Inicio de sesión exitoso');
-            navigate("/home"); // Redirigir si las credenciales son correctas
+            navigate("/home"); 
         } else {
-            setErrorMessage('Contraseña incorrecta'); // Mostrar mensaje de error
+            setErrorMessage('Contraseña incorrecta');
         }
     };
 
     const requestChange = async (user) => {
-        const existingUser = users.find(cred => cred.user === user);
 
-        if (existingUser) {
-            setErrorMessage('El usuario ya existe'); // Mostrar mensaje de error
-            return;
-        }
-
-        // Agregar nuevo usuario
         const newUser = { user, password };
         const updatedUsers = [...users, newUser];
 
-        // Guardar el nuevo usuario en el archivo JSON
         await saveUsersToJson(updatedUsers);
 
-        console.log('Registro exitoso');
-        navigate("/home"); // Redirigir si el registro es correcto
+        console.log('Solicite respuesta en administracion');
+         navigate("/home", { state: { user } });
     };
 
     const saveUsersToJson = async (updatedUsers) => {
@@ -83,39 +75,35 @@ function LoginForm() {
         requestChange(name);
     };
 
-    // Función para cambiar la visibilidad entre los formularios
     const toggleVisibility = () => {
         setVisible(!visible);
-        setErrorMessage(''); // Limpiar mensaje de error al cambiar de formulario
+        setErrorMessage('');
     };
 
     return (
         <div>
-            {/* Formulario de inicio de sesión */}
+
             <div id={visible ? 'visible' : 'invisible'}>
                 <form onSubmit={handleSubmit} className='Form'>
-                    <h2>Inicio de sesión</h2>
-                    <label htmlFor="login-name" className='inputLogin'>Usuario</label>
+                    <h1>Billeteros</h1>
                     <input
                         type="text"
                         id="login-name"
-                        placeholder="Ingrese su nombre de usuario"
+                        placeholder="Usuario"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
-                    <br />
-                    <label htmlFor="login-password" className='inputLogin'>Contraseña</label>
+
                     <input
                         type="password"
                         id="login-password"
-                        placeholder="Ingrese su contraseña"
+                        placeholder="Clave"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                     <button className="noStyle" type="button" onClick={toggleVisibility}>¿Olvidó su contraseña?</button>
-                    <br />
                     <button className="submitBtn" type="submit">Ingresar</button>
                 </form>
                 {errorMessage && (
@@ -134,19 +122,19 @@ function LoginForm() {
                     <input
                         type="text"
                         id="CambioContraseña"
-                        placeholder="Ingrese su nombre de usuario"
+                        placeholder="Usuario"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
                     <p className="error"></p>
                     <br />
-                    <button className="noStyle" type="button" onClick={toggleVisibility}>Iniciar sesión</button>
+                    <button className="noStyle" type="button" onClick={toggleVisibility}>Volver</button>
                     <br />
                     <button className="submitBtn"  type="submit">Solicitar</button>
                 </form>
                 {errorMessage && (
-                    <ErrorMensage nE="Error" error={errorMessage} />
+                    <ErrorMensage nE="102" error={errorMessage} />
                 )}
             </div>
         </div>

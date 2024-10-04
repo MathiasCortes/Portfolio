@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const Home = () => {
   return (
     <div>
-      if (user = "") {
+      if (user === "") {
         
       }
       <main>
