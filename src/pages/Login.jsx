@@ -30,7 +30,7 @@ function LoginForm() {
 
         if (userData) {
             console.log('Inicio de sesión exitoso');
-            navigate("/home"); 
+            navigate("/Inicio", { state: { user } }); 
         } else {
             setErrorMessage('Contraseña incorrecta');
         }
@@ -44,7 +44,7 @@ function LoginForm() {
         await saveUsersToJson(updatedUsers);
 
         console.log('Solicite respuesta en administracion');
-         navigate("/home", { state: { user } });
+         navigate("/Error", { state: { user } });
     };
 
     const saveUsersToJson = async (updatedUsers) => {
