@@ -7,7 +7,7 @@ import Edit from './pages/Edit.jsx'
 import Login from './pages/Login.jsx';
 
 
-<script src='./css/App.css'></script>
+<script src='./styles/App.css'></script>
 function App() {
 
 

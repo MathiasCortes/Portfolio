@@ -14,7 +14,7 @@ function LoginForm() {
     useEffect(() => {
         const loadUsers = async () => {
             try {
-                const response = await fetch('/database/Users.json');
+                const response = await fetch('http://192.168.1.206:3000/users');
                 const data = await response.json();
                 setUsers(data); 
             } catch (error) {

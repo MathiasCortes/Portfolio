@@ -8,8 +8,16 @@ const Home = () => {
         <img src="../assets/Logo/logo.png" alt="CITYGAME" />
         </div>
       <aside className="sideBar"></aside>
-      <p>hola</p>
-
+        <div>
+          <table>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
       </main>
     </div>
   );
