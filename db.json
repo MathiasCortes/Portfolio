@@ -2,28 +2,28 @@
     "users":[
         {
           "user": "admin",
-          "password": "citygameAd",
+          "password": "citygamead",
           "access": "administration"
         },
         {
           "user": "taller",
-          "password": "citygameTa",
+          "password": "citygameta",
           "access": "repair"
         },
         {
           "user": "control",
-          "password": "citygameCo",
+          "password": "citygameco",
           "access": "all"
         }
     ],
     "clients":[
-        {
+        {   
+            "CID":0,
             "Name":"",
             "SurName":"",
-            "CI":"",
             "EntryDate":"",
             "Quantity":0,
-            "repaired":[0],
+            "phone":0,
             "IDs":[0]
         }
     ],
@@ -31,16 +31,17 @@
         {
             "ID":"",
             "EntryDate":"",
-            "LastDate":"",
+            "Dates":[""],
             "Description":"",
-            "Owners":[""],
+            "FirstOwners":"",
             "CurrentOwner":""
         }
     ],
     "registry":[
       {
-        "ID":"",
-        "Date":""
+        "IDs":[""],
+        "Date":"",
+        "Description":""
       }
     ]
       

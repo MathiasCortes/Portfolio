@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 
+function VerifyCredentials (){
+  const [user, setUser]=useState('');
+  const [access, setAccess]=useState('');
+}
+
 const Home = () => {
+
   return (
     <div>
       <main>
@@ -10,12 +16,7 @@ const Home = () => {
       <aside className="sideBar"></aside>
         <div>
           <table>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            
           </table>
         </div>
       </main>

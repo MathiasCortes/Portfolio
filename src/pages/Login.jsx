@@ -14,16 +14,27 @@ function LoginForm() {
     useEffect(() => {
         const loadUsers = async () => {
             try {
-                const response = await fetch('http://192.168.1.206:3000/users');
+                const response = await fetch('http://192.168.1.206:26352/users', {
+                    method: 'GET',
+                    headers: {
+                        'Token': 'E@!rñUs84'
+                    }
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta de la API');
+                }
+    
                 const data = await response.json();
                 setUsers(data); 
             } catch (error) {
                 console.error('Error al cargar los usuarios:', error);
             }
         };
-
+    
         loadUsers();
     }, []);
+    
 
     const checkCredentials = (user, password) => {
         const userData = users.find(cred => cred.user === user && cred.password === password);

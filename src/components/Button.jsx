@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';  
-import LoginForm from './LoginForm';
+
 
 const Button = ({ text, to }) => {
   const navigate = useNavigate(); 
@@ -9,9 +9,7 @@ const Button = ({ text, to }) => {
     navigate(to);
   };
   
-  if(to == "Login"){
-    LoginForm();
-  }
+  
   return (
     <button onClick={handleClick}>{text}</button>
   );

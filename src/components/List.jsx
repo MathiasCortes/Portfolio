@@ -9,6 +9,7 @@ const errorList = [
   { number: 403, message: "Prohibido" },
   { number: 404, message: "Página no encontrada" },
   { number: 500, message: "Error interno del servidor" },
+  { number: 501, message: "La base de datos no responde"}
 ];
 
 const ErrorList = ({ eNumber }) => {
