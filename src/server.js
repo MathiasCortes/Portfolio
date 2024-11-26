@@ -4,21 +4,19 @@ const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 const PORT = 26352;
 
-// Token de ejemplo (puedes generarlo de forma dinámica si lo prefieres)
+
 const validUsrToken = 'E@!rñUs84';
 const validCliToken = 'C^!añEn41';
 
 server.use(middlewares);
 
-// Middleware para verificar el token
+const token = req.headers['Token'];
 server.use((req, res, next) => {
-    // Permitir acceso solo a las solicitudes GET a /users
     if (req.method === 'GET' && req.path === '/users') {
-        const token = req.headers['authorization'];
         if (token === validUsrToken) {
-            next(); // Token válido, continuar con la solicitud
+            next(); 
         } else {
-            res.sendStatus(403); // Prohibido si el token es incorrecto
+            res.sendStatus(403); 
         }
     } if (req.method === 'GET' && req.path === '/Clients') {
         if (token === validCliToken){
@@ -26,10 +24,8 @@ server.use((req, res, next) => {
         } else {
             res.sendStatus(403);
         }
-    } 
-    
-    else {
-        next(); // Permitir otras solicitudes
+    } else {
+        next(); 
     }
 });
 
@@ -37,3 +33,14 @@ server.use(router);
 server.listen(PORT, () => {
     console.log(`JSON Server is running on port ${PORT}`);
 });
+
+switch (req.path) {
+    case '/users':
+        
+    break;
+    case '/clients':
+            before;
+
+    default:
+        break;
+}
