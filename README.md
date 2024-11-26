@@ -1,4 +1,4 @@
 # Billeteros
- Aplicacion de registro de billeteros
+ Aplicacion web creada para la venta de ropa
  Lenguajes: HTML, CSS, Javascript
  Librerias: Reactjs, Nodejs
