@@ -96,7 +96,7 @@ function LoginForm() {
 
             <div id={visible ? 'visible' : 'invisible'}>
                 <form onSubmit={handleSubmit} className='Form'>
-                    <h1>Billeteros</h1>
+                    <h1>Login</h1>
                     <input
                         type="text"
                         id="login-name"

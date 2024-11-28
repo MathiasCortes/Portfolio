@@ -12,9 +12,9 @@ server.use(middlewares);
 
 // Middleware para verificar el token
 server.use((req, res, next) => {
+    const token = req.headers['authorization'];
     // Permitir acceso solo a las solicitudes GET a /users
-    if (req.method === 'GET' && req.path === '/users') {
-        const token = req.headers['authorization'];
+    if (req.method === 'GET' && req.path === '/users') {   
         if (token === validUsrToken) {
             next(); // Token válido, continuar con la solicitud
         } else {
