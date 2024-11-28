@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorMensage from "../components/ErrorMensage"; 
-
+import EyeIconShow from "../components/EyeIconShow";
+import EyeIconHide from "../components/EyeIconHide"
 function LoginForm() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -90,6 +91,7 @@ function LoginForm() {
         setVisible(!visible);
         setErrorMessage('');
     };
+    const [showPass, setShowPass] = useState(false)
 
     return (
         <div>
@@ -105,15 +107,27 @@ function LoginForm() {
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
-
+                <div>
                     <input
-                        type="password"
+                        type={showPass ? "text" : "password"}
                         id="login-password"
                         placeholder="Clave"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
+
+                         
+
                     />
+
+                    <div className="hide-IconPassword" onClick={() => setShowPass(!showPass)
+                        }>
+                            {showPass ? <EyeIconHide size={25} color="black" />
+                                : <EyeIconShow size={25} color="black" />}      
+                        </div>
+
+                        
+                </div>                  
                     <button className="noStyle" type="button" onClick={toggleVisibility}>¿Olvidó su contraseña?</button>
                     <button className="submitBtn" type="submit">Ingresar</button>
                 </form>

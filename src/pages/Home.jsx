@@ -10,9 +10,9 @@ const Home = () => {
   return (
     <div>
       <main>
-        <div className="navbar">
-        <img src="" alt="" />
-        </div>
+        <nav className="navbar">
+        <img src="../assets/Logo/logo.png" alt="CITYGAME" />
+        </nav>
       <aside className="sideBar"></aside>
         <div>
           <table>
