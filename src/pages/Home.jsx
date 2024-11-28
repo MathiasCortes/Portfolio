@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <main>
         <div className="navbar">
-        <img src="../assets/Logo/logo.png" alt="CITYGAME" />
+        <img src="" alt="" />
         </div>
       <aside className="sideBar"></aside>
         <div>
