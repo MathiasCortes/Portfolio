@@ -1,25 +1,40 @@
-import React, { useState, useEffect } from "react";
-
-function VerifyCredentials (){
-  const [user, setUser]=useState('');
-  const [access, setAccess]=useState('');
-}
+import React, { useState } from "react";
 
 const Home = () => {
+  const [isHidden, setIsHidden] = useState("Hidden");
+  const [sideMenuIcon, setSideMenuIcon] = useState(
+    "../assets/svg/bars-solid.svg"
+  );
+
+  const handleClickShow = () => {
+    setIsHidden(isHidden === "Hidden" ? "Shown" : "Hidden");
+    setSideMenuIcon(
+      isHidden === "Hidden"
+        ? "../assets/svg/xmark-solid.svg"
+        : "../assets/svg/bars-solid.svg"
+    );
+  };
 
   return (
     <div>
-      <main>
-        <nav className="navbar">
-        <img src="../assets/Logo/logo.png" alt="CITYGAME" />
-        </nav>
-      <aside className="sideBar"></aside>
-        <div>
-          <table>
-            
-          </table>
-        </div>
-      </main>
+      <nav className="navbar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          width="40"
+          height="40"
+          fill="currentColor"
+          alt="Toggle Menu"
+          onClick={handleClickShow}
+          style={{ cursor: "pointer" }}
+        >
+          <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+        </svg>
+      </nav>
+      <aside className={`sideBar ${isHidden}`}>
+        <></>
+      </aside>
+      <main></main>
     </div>
   );
 };

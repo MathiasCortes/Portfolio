@@ -1,26 +1,22 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  
-import React from 'react';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // --- //
-import Error from './pages/Error.jsx'
-import Home from './pages/Home.jsx';
-import Edit from './pages/Edit.jsx'
-import Login from './pages/Login.jsx';
+import Error from "./pages/Error.jsx";
+import Home from "./pages/Home.jsx";
+import Edit from "./pages/Edit.jsx";
+import Login from "./pages/Login.jsx";
+import "./styles/App.css"; // Corregido el uso de CSS
 
+// Configuración de rutas
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/Inicio", element: <Login /> },
+  { path: "/Editar", element: <Edit /> },
+  { path: "/Error", element: <Error /> },
+]);
 
-<script src='./styles/App.css'></script>
 function App() {
-
-
-  return (
-    <Router>
-      <Routes>  
-          <Route path='/' element={<Home/>}/>
-          <Route path='/Inicio' element={<Login/>}/>
-          <Route path='/Editar' element={<Edit/>}/>
-          <Route path='/Error' element={<Error/>}/>
-        </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
