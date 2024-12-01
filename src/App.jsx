@@ -5,9 +5,8 @@ import Error from "./pages/Error.jsx";
 import Home from "./pages/Home.jsx";
 import Edit from "./pages/Edit.jsx";
 import Login from "./pages/Login.jsx";
-import "./styles/App.css"; // Corregido el uso de CSS
+import "./styles/App.css";
 
-// Configuración de rutas
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/Inicio", element: <Login /> },
