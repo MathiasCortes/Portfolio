@@ -7,7 +7,7 @@ import Edit from "./pages/Edit.jsx";
 import Login from "./pages/Login.jsx";
 import "./styles/App.css";
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/Inicio", element: <Login /> },
   { path: "/Editar", element: <Edit /> },
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={routes} />;
 }
 
 export default App;
