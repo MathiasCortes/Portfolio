@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorMensage from "../components/ErrorMensage"; 
-import EyeIconShow from "../components/EyeIconShow";
-import EyeIconHide from "../components/EyeIconHide"
+import Icons from "../components/SvgIcon";
+
 function LoginForm() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -122,8 +122,8 @@ function LoginForm() {
 
                     <div className="hide-IconPassword" onClick={() => setShowPass(!showPass)
                         }>
-                            {showPass ? <EyeIconHide size={25} color="black" />
-                                : <EyeIconShow size={25} color="black" />}      
+                            {showPass ? <Icons iconPath="EyeShow"/>
+                                : <Icons iconPath="EyeHide"/>}      
                         </div>
 
                         
