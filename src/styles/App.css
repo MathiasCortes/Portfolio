@@ -1,147 +1,15 @@
-:root {
-  --text-color: #116e91;
-  --font-color: #e6e6e6;
-  --Background-color:#d3d3d3;
-
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ToggleIcon{
+  width: 40px;
+  height: 40px;
+  float: left;
+  border: blue ;
 }
 
-/* General */
-body {
-  padding-top: 4rem;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--Background-color);
-  color: #333;
+.navbar{
+  background-color: black;
 }
-
-h1 {
-  text-align: center;
-  font-weight: bold;
-  color: var(--text-color);
-  font-size: 2rem;
-  margin-top:1rem;
-}
-
-a{
-  cursor: pointer;
-  color: var(--text-color);
-}
-
-/* Botón de envío */
-
-button {
-  width: 100%;
-  background-color: var(--text-color);
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  margin-bottom: 1rem;
-}
-
-.submitBtn:hover {
-  background-color: #1d8db6;
-}
-
-/* Formulario */
-
-.Form {
-  width: 130%;
-  padding: 100px 0px;
-  max-width: 800px;
-  margin: 200px auto;
-  background-color: #fff;
-  padding: 20px;
-  display: block;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-color: #000000;
-  outline: none;
-  box-shadow: 0 0 5px rgba(41, 41, 41,1);
-}
-
-#visible {
-  display: block;
-}
-
-#invisible {
-  display: none;
-}
-
-.noStyle {
-  background: none;
-  border: none;
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-  max-width: fit-content;
-  text-align: left;
-}
-
-/* Mensaje de error */
-p {
-  text-align: center;
-  font-size: 12px;
-}
-
-
-p.errorAnimation {
-  color: rgb(241, 64, 64);
-  font-weight: bold;
-  font-size: 14px;
-  position: fixed;
-  bottom: -100%; 
-  right: -100%; 
-  width: 200px;
-  height: 1rem;
-  background-color: rgb(170, 170, 170);
-  border-radius: 10px;
-  border-color: #000000 20px;
-  padding: 20px;
-  transition: all 0.5s ease-in-out; 
-}
-
-
-
-
-p.errorAnimation.show {
-  bottom: 0px;
-  right: 20px;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .LoginForm {
-      padding: 15px;
-  }
-
-  h2 {
-      font-size: 24px;
-  }
-
-  button {
-      font-size: 16px;
-  }
-}
-
