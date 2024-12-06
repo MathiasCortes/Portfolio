@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import "../styles/Navbar.css";
-
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [sideMenuIcon, setSideMenuIcon] = useState(false);
 
   const toggleList = sideMenuIcon ? (
-    <ul className="absolute pl-8 m-0 text-white list-none bg-gray-800 rounded-md top-14 right-1">
+    <ul className="absolute m-0 text-white list-none bg-gray-800 rounded-md w-60 top-14 right-1">
       <li className= "toggleMenu-item">
-        <a href="#Ajustes" className="navbarToggle-linkItems">Ajustes</a>
+        <a className=" navToggle-listItems-a" href="#Ajustes" >Ajustes</a>
       </li>
       <li className= "toggleMenu-item">
-        <a href="#Home" className="navbarToggle-linkItems">b</a>
+        <a className="navToggle-listItems-a" href="#Home">Home</a>
       </li>
       <li className= "toggleMenu-item">
-        <a href="#increible" className="navbarToggle-linkItems">c</a>
+        <a className="navToggle-listItems-a" href="#increible">c</a>
       </li>
       <li className= "toggleMenu-item">
-        <a href="#maravilloso" className="navbarToggle-linkItems">d</a>
+        <a className="navToggle-listItems-a" href="#maravilloso" >d</a>
       </li>
     </ul>
   ) : null;
@@ -26,7 +25,7 @@ const Navbar = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 384 512"
-      className="ToggleIcon"
+      className="float-right w-10 h-10 border-blue-600"
       alt="Toggle Menu"
     >
       {/* Icono cuando está visible */}
@@ -36,7 +35,7 @@ const Navbar = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
-      className="ToggleIcon"
+      className="float-right w-10 h-10 border-blue-600"
     >
       {/* Icono cuando está oculto */}
       <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
@@ -48,22 +47,22 @@ const Navbar = () => {
     setSideMenuIcon(!sideMenuIcon);
   };
   return (
-    <nav className="flex items-center px-2 py-2 text-white bg-gray-800 place-content-between">
-      <button className="text-2xl font-bold bg-neutral-950">
-        {/* <img src="" alt="Logo" /> */}asaaaaaa
+    <nav className="flex items-center px-2 py-2 text-white bg-gray-800 border-b-2 border-gray-950 place-content-between">
+      <button className="">
+       <img src="" alt="Logo" />
       </button>
-      <ul className="flex gap-4 list-none">
-        <li className="nav-item">
-          <a href="#home">a</a>
+      <ul className="flex list-none max-sm:hidden">
+        <li className="nav-listItem">
+          <a className="nav-listItem-a" href="#home">dx</a>
         </li>
-        <li className="nav-item">
-          <a href="#interesante">b</a>
+        <li className="nav-listItem">
+          <a className="nav-listItem-a" href="#interesante">xd supremo</a>
         </li>
-        <li className="nav-item">
-          <a href="#maybe">c</a>
+        <li className="nav-listItem">
+          <a className="nav-listItem-a" href="#maybe">xd Legendario</a>
         </li>
-        <li className="nav-item">
-          <a href="#bytheway">d</a>
+        <li className="nav-listItem">
+          <a className="nav-listItem-a" href="#bytheway">xd???</a>
         </li>
       </ul>
       <button className="bg-white border rounded-none" onClick={handleClick}>

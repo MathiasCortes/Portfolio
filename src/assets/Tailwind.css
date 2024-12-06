@@ -2,18 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav-item{
-    @apply inline
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  a{
+    @apply text-white no-underline text-base 
 }
-a{
-    @apply text-white no-underline text-base
+.nav-listItem{
+    @apply mx-2
 }
-a:hover {
-    @apply underline
+
+.nav-listItem-a {
+    @apply block p-3 border-l-2 border-r-2 border-transparent
 }
+.nav-listItem-a:hover{
+    @apply border-gray-900 bg-gray-950 bg-opacity-15
+}
+
 .toggleMenu-item{
-    @apply px-2 py-2
+    @apply m-2
 }
-.navbarToggle-linkItems{
-    @apply text-white no-underline
+.navToggle-listItems-a{
+    @apply block p-2 border-l-2 border-transparent  
 }
+.navToggle-listItems-a:hover{
+    @apply border-gray-900 bg-gray-950 bg-opacity-20
+}
+
+ 
