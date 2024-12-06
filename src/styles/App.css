@@ -1,2 +1,20 @@
+<<<<<<< HEAD
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ToggleIcon{
+  width: 40px;
+  height: 40px;
+  float: left;
+  border: blue ;
+}
+>>>>>>> 84dd29844af8630971deb6c17ca4e91de244f98d
 
 
