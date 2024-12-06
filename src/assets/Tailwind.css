@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-item{
+    @apply inline
+}
+a{
+    @apply text-white no-underline text-base
+}
+a:hover {
+    @apply underline
+}
+.toggleMenu-item{
+    @apply px-2 py-2
+}
+.navbarToggle-linkItems{
+    @apply text-white no-underline
+}
