@@ -3,24 +3,29 @@
 @tailwind utilities;
 
 *{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    @apply p-0 m-0 font-sans
+    
+    
   }
   a{
     @apply text-white no-underline text-base 
 }
+
+/* Navbar items */
 .nav-listItem{
     @apply mx-2
 }
 
+
 .nav-listItem-a {
-    @apply block p-3 border-l-2 border-r-2 border-transparent
+    @apply block p-2 px-2 border-b-2 border-transparent
 }
 .nav-listItem-a:hover{
-    @apply border-gray-900 bg-gray-950 bg-opacity-15
+    @apply border-gray-900 bg-gray-950 bg-opacity-15 transition-transform duration-100 ease-in-out scale-95 transform hover:scale-95
 }
+/* Navbar items */
 
+/* toggle */
 .toggleMenu-item{
     @apply m-2
 }
@@ -28,7 +33,7 @@
     @apply block p-2 border-l-2 border-transparent  
 }
 .navToggle-listItems-a:hover{
-    @apply border-gray-900 bg-gray-950 bg-opacity-20
+    @apply border-gray-900 bg-gray-950 bg-opacity-20 transition duration-100 ease-in-out transform scale-95 
 }
-
+/* toggle */
  
