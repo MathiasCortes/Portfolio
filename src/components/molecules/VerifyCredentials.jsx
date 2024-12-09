@@ -13,43 +13,23 @@ const VerifyCredentials = () => {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "400px",
-        margin: "auto",
-        padding: "20px",
-        textAlign: "center",
-      }}
-    >
+    <div class="max-w-25 mx-auto p-5 text-center">
       <h2>Login</h2>
       <input
         type="text"
         placeholder="Enter Username"
+        class="block m-2.5 p-2.5 w-11/12"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        style={{
-          display: "block",
-          margin: "10px auto",
-          padding: "10px",
-          width: "90%",
-        }}
       />
       <input
         type="password"
         placeholder="Enter Password"
+        class="block m-2.5 p-2.5 w-11/12"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        style={{
-          display: "block",
-          margin: "10px auto",
-          padding: "10px",
-          width: "90%",
-        }}
       />
-      <button
-        onClick={handleLogin}
-        style={{ padding: "10px 20px", marginTop: "10px" }}
-      >
+      <button onClick={handleLogin} class="py-2.5 px-5 mt-2.5">
         Save Login
       </button>
     </div>
