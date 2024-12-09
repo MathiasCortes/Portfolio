@@ -1,13 +1,13 @@
-import React from 'react'
-import ErrorMensage from '../components/ErrorMensage'
+import React from "react";
+import ErrorMensage from "../components/molecules/ErrorMensage";
 
 const Error = () => {
   return (
-    <div className='errordiv'>
+    <div className="errordiv">
       <h1> Ha ocurrido un error</h1>
-      <ErrorMensage nE="404"/>
+      <ErrorMensage nE="404" />
     </div>
-  )
-}
+  );
+};
 
-export default Error
+export default Error;

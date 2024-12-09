@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -7,17 +6,25 @@ const Navbar = () => {
 
   const toggleList = sideMenuIcon ? (
     <ul className="absolute pl-8 m-0 text-white list-none bg-gray-800 rounded-md top-14 right-1">
-      <li className= "toggleMenu-item">
-        <a href="#Ajustes" className="navbarToggle-linkItems">Ajustes</a>
+      <li className="toggleMenu-item">
+        <a href="#Ajustes" className="navbarToggle-linkItems">
+          Ajustes
+        </a>
       </li>
-      <li className= "toggleMenu-item">
-        <a href="#Home" className="navbarToggle-linkItems">b</a>
+      <li className="toggleMenu-item">
+        <a href="#Home" className="navbarToggle-linkItems">
+          b
+        </a>
       </li>
-      <li className= "toggleMenu-item">
-        <a href="#increible" className="navbarToggle-linkItems">c</a>
+      <li className="toggleMenu-item">
+        <a href="#increible" className="navbarToggle-linkItems">
+          c
+        </a>
       </li>
-      <li className= "toggleMenu-item">
-        <a href="#maravilloso" className="navbarToggle-linkItems">d</a>
+      <li className="toggleMenu-item">
+        <a href="#maravilloso" className="navbarToggle-linkItems">
+          d
+        </a>
       </li>
     </ul>
   ) : null;
@@ -54,16 +61,17 @@ const Navbar = () => {
       </button>
       <ul className="flex gap-4 list-none">
         <li className="nav-item">
-          <a href="#home">a</a>
+          <a href="#home">Home</a>
         </li>
         <li className="nav-item">
-          <a href="#interesante">b</a>
+          <a href="#login">Login</a>
         </li>
         <li className="nav-item">
-          <a href="#maybe">c</a>
+          <a href="#signup">Register</a>
         </li>
+
         <li className="nav-item">
-          <a href="#bytheway">d</a>
+          <a href="#aboutus">About Us</a>
         </li>
       </ul>
       <button className="bg-white border rounded-none" onClick={handleClick}>
