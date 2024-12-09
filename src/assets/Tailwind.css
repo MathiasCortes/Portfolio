@@ -2,18 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav-item{
-    @apply inline
+*{
+    @apply p-0 m-0 font-sans
+    
+    
+  }
+  a{
+    @apply text-white no-underline text-base 
 }
-a{
-    @apply text-white no-underline text-base
+
+/* Navbar items */
+.nav-listItem{
+    @apply mx-2
 }
-a:hover {
-    @apply underline
+
+
+.nav-listItem-a {
+    @apply block p-2 px-2 border-b-2 border-transparent
 }
+.nav-listItem-a:hover{
+    @apply border-gray-900 bg-gray-950 bg-opacity-15 transition-transform duration-100 ease-in-out scale-95 transform hover:scale-95
+}
+/* Navbar items */
+
+/* toggle */
 .toggleMenu-item{
-    @apply px-2 py-2
+    @apply m-2
 }
-.navbarToggle-linkItems{
-    @apply text-white no-underline
+.navToggle-listItems-a{
+    @apply block p-2 border-l-2 border-transparent  
 }
+.navToggle-listItems-a:hover{
+    @apply border-gray-900 bg-gray-950 bg-opacity-20 transition duration-100 ease-in-out transform scale-95 
+}
+/* toggle */
+ 
