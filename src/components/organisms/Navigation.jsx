@@ -15,4 +15,4 @@ const Button = ({ text, to }) => {
   );
 };
 
-export default Button;
+export default Navigation;

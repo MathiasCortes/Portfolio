@@ -26,6 +26,16 @@
 /* Navbar items */
 
 /* toggle */
+.activeToggle{
+    @apply absolute transition-transform duration-500 ease-in-out transform bg-gray-900 rounded-br-md top-16 z-10 right-1 w-60
+}
+.hiddenToggle{
+    @apply hidden
+}
+.lineToggle{
+    @apply absolute w-10 h-1 bg-black rounded-sm
+}
+
 .toggleMenu-item{
     @apply m-2
 }
@@ -33,7 +43,7 @@
     @apply block p-2 border-l-2 border-transparent  
 }
 .navToggle-listItems-a:hover{
-    @apply border-gray-900 bg-gray-950 bg-opacity-20 transition duration-100 ease-in-out transform scale-95 
+    @apply border-gray-900 bg-gray-950 bg-opacity-20 transition-transform duration-100 ease-in-out transform scale-95 
 }
 /* toggle */
  
