@@ -14,27 +14,27 @@ const Navbar = () => {
         {" "}
         {/* -z-10 */}
         <li className="toggleMenu-item">
-          <a className=" navToggle-listItems-a translate-" href="#Ajustes">
+          <a className=" navToggle-listItems-a translate-" href="#Login">
             Opcion 1
           </a>
         </li>
         <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#Home">
+          <a className="navToggle-listItems-a" href="#Register">
             Opcion 2
           </a>
         </li>
         <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#increible">
+          <a className="navToggle-listItems-a" href="#Shop">
             Opcion 3
           </a>
         </li>
         <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#maravilloso">
+          <a className="navToggle-listItems-a" href="#Cart">
             Opcion 4
           </a>
         </li>
         <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#maravilloso">
+          <a className="navToggle-listItems-a" href="#LogOut">
             Opcion 5
           </a>
         </li>

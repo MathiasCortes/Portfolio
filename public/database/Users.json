@@ -2,17 +2,12 @@
     {
       "user": "admin",
       "password": "citygameAd",
-      "access": "administration"
-    },
-    {
-      "user": "taller",
-      "password": "citygameTa",
-      "access": "repair"
+      "access": "basic"
     },
     {
       "user": "control",
-      "password": "citygameCo",
-      "access": "all"
+      "password": "1234",
+      "access": "Admin"
     }
 ]
   

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ErrorMensage from "../components/ErrorMensage"; 
-import Icons from "../components/SvgIcon";
+import ErrorMensage from "../../components/molecules/ErrorMensage"; 
+import Icons from "../../components/atoms/SvgIcon";
 
 function LoginForm() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [visible, setVisible] = useState(true); 
-    const [users, setUsers] = useState([]); 
+    const [users, setUsers] = useState<{ user: string; password: string }[]>([]); 
     const navigate = useNavigate();
 
 
@@ -122,8 +122,8 @@ function LoginForm() {
 
                     <div className="hide-IconPassword" onClick={() => setShowPass(!showPass)
                         }>
-                            {showPass ? <Icons iconPath="EyeShow"/>
-                                : <Icons iconPath="EyeHide"/>}      
+                            {showPass ? <Icons name="EyeShow"/>
+                                : <Icons name="EyeHide"/>}      
                         </div>
 
                         

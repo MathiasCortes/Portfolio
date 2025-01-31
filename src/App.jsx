@@ -1,13 +1,16 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // --- //
-import Error from "./pages/Error.jsx";
-import Home from "./pages/Home.jsx";
-import Edit from "./pages/Edit.jsx";
+
+import Home from "./app/page.tsx";
+import Login from "./app/login/page.tsx";
+import Register from "./app/(auth)/register/page.tsx";
+import Error from "./app/error/page.tsx";
 
 const routes = createBrowserRouter([
   { path: "/", element: <Home /> },
-  { path: "/Editar", element: <Edit /> },
+  { path: "/Login", element: <Login /> },
+  { path: "/Register", element: <Register /> },
   { path: "/Error", element: <Error /> },
 ]);
 
