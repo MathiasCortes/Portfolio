@@ -6,9 +6,11 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-     {/* <VerifyCredentials /> */}
       <main>
+<Title />
+<Oferts />
       </main>
+<Footer \>
     </div>
   );
 };
