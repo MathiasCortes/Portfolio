@@ -1,97 +1,120 @@
-import React, { useState } from "react";
-import Logo from "../../assets/svg/LogoStar.png";
+import React, { useState, useEffect, useMemo } from "react";
 
 const Navbar = () => {
-  const [isHidden, setIsHidden] = useState(false);
-  const [sideMenuIcon, setSideMenuIcon] = useState(false);
-  const handleClick = () => {
-    setIsHidden(!isHidden);
-    setSideMenuIcon(!sideMenuIcon);
-  };
-  const toggleList = sideMenuIcon ? (
-    <div className={`${isHidden ? "activeToggle" : "hiddenToggle"}`}>
-      <ul className="relative transition duration-500">
-        {" "}
-        {/* -z-10 */}
-        <li className="toggleMenu-item">
-          <a className=" navToggle-listItems-a translate-" href="#Login">
-            Opcion 1
-          </a>
-        </li>
-        <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#Register">
-            Opcion 2
-          </a>
-        </li>
-        <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#Shop">
-            Opcion 3
-          </a>
-        </li>
-        <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#Cart">
-            Opcion 4
-          </a>
-        </li>
-        <li className="toggleMenu-item">
-          <a className="navToggle-listItems-a" href="#LogOut">
-            Opcion 5
-          </a>
-        </li>
-      </ul>
-    </div>
-  ) : null;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const iconToggle = isHidden ? (
-    <button
-      className="relative flex items-center justify-center w-12 h-12 overflow-hidden transition duration-500 transform bg-white border rounded-sm hover:scale-95"
-      onClick={handleClick}
-    >
-      <span className="absolute w-10 h-1 transition-transform duration-300 -rotate-45 bg-black rounded-sm"></span>
-      <span className="absolute w-10 h-1 transition-transform duration-300 rotate-45 bg-black rounded-sm"></span>
-      <span className="absolute w-10 h-1 transition-transform duration-300 translate-x-12 bg-black rounded-sm"></span>
-    </button>
-  ) : (
-    <button
-      className="relative flex items-center justify-center w-12 h-12 overflow-hidden transition duration-300 transform bg-white border rounded-sm hover:scale-95"
-      onClick={handleClick}
-    >
-      <span className="transition-transform duration-300 -translate-y-3 lineToggle"></span>
-      <span className="transition-transform duration-300 translate-y-3 lineToggle"></span>
-      <span className="transition-transform duration-300 -translate-x-0 lineToggle"></span>
-    </button>
-  );
+  const menuItems = useMemo(() => [
+    { id: "hero", label: "Inicio" },
+    { id: "about", label: "Acerca" },
+    { id: "skills", label: "Habilidades" },
+    { id: "projects", label: "Proyectos" },
+    { id: "experience", label: "Experiencia" },
+    { id: "certifications", label: "Certificaciones" },
+    { id: "contact", label: "Contacto" }
+  ], []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      // Detect active section
+      const sections = menuItems.map(item => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 100;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && scrollPosition >= section.offsetTop) {
+          setActiveSection(menuItems[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuItems]);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
-    <nav className="relative z-10 flex items-center px-2 py-2 text-white bg-gray-800 border-b-2 border-gray-950 place-content-between">
-      <img src={Logo} alt="Logo" className="h-10 w-100" />
+    <nav className={`navbar transition-all duration-300 ${
+      isScrolled ? 'py-2' : 'py-4'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <button
+              onClick={() => scrollToSection('hero')}
+              className="text-2xl font-bold gradient-text hover:scale-105 transition-transform"
+            >
+              MC
+            </button>
+          </div>
 
-      <ul className="flex list-none max-sm:hidden">
-        <li className="nav-listItem">
-          <a className="nav-listItem-a" href="#home">
-            Opcion 1
-          </a>
-        </li>
-        <li className="nav-listItem">
-          <a className="nav-listItem-a" href="#interesante">
-            Opcion 2
-          </a>
-        </li>
-        <li className="nav-listItem">
-          <a className="nav-listItem-a" href="#maybe">
-            Opcion 3
-          </a>
-        </li>
-        <li className="nav-listItem">
-          <a className="nav-listItem-a" href="#bytheway">
-            Opcion 4
-          </a>
-        </li>
-      </ul>
+          {/* Desktop Menu */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {menuItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`nav-link ${
+                    activeSection === item.id ? 'active' : ''
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
-      {iconToggle}
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="relative w-8 h-8 flex flex-col justify-center items-center"
+            >
+              <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+                isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
+              }`} />
+              <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+                isMenuOpen ? 'opacity-0' : 'opacity-100'
+              }`} />
+              <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+                isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
+              }`} />
+            </button>
+          </div>
+        </div>
+      </div>
 
-      {toggleList}
+      {/* Mobile Menu */}
+      <div className={`mobile-menu md:hidden ${
+        isMenuOpen ? 'visible' : 'hidden'
+      }`}>
+        <div className="flex flex-col space-y-2">
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`nav-link text-left ${
+                activeSection === item.id ? 'active' : ''
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 };
