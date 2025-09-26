@@ -34,7 +34,7 @@ body {
 
 /* Utility Classes */
 .gradient-text {
-    @apply bg-gradient-to-r from-cyan-300 via-cyan-400 to-white bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-300/100 via-cyan-400/80 to-gray-100/20 bg-clip-text text-transparent;
 }
 
 .gradient-bg {
