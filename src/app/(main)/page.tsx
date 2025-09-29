@@ -354,7 +354,7 @@ const Home = () => {
                   <a href="https://linkedin.com/in/mathias-cortes" target="_blank" rel="noopener noreferrer" className="p-3 glass-morphism rounded-lg hover:scale-110 transition-transform" aria-label="LinkedIn Profile">
                     <Icon name="Exit" size={20} />
                   </a>
-                  <a href="https://github.com/mathias-cortes" target="_blank" rel="noopener noreferrer" className="p-3 glass-morphism rounded-lg hover:scale-110 transition-transform" aria-label="GitHub Profile">
+                  <a href="https://github.com/MathiasCortes" target="_blank" rel="noopener noreferrer" className="p-3 glass-morphism rounded-lg hover:scale-110 transition-transform" aria-label="GitHub Profile">
                     <Icon name="Gear" size={20} />
                   </a>
                   <a href="https://twitter.com/mathias_cortes" target="_blank" rel="noopener noreferrer" className="p-3 glass-morphism rounded-lg hover:scale-110 transition-transform" aria-label="Twitter Profile">

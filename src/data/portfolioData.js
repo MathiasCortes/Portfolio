@@ -3,7 +3,7 @@ export const personalInfo = {
   name: "Mathias Nahuel Cortés Fabra",
   title: "Desarrollador Frontend Junior",
   description: "Apasionado por el aprendizaje continuo y la mejora constante, busco aplicar mis habilidades técnicas y creatividad en el desarrollo de soluciones innovadoras y eficientes",
-  email: "arthourprimm@gmail.com",
+  email: "arthourgrimm@gmail.com",
   phone: "+598 094986857",
   location: "Villa Don Bosco, Uruguay",
   profileImage: "/api/placeholder/400/500",
@@ -12,7 +12,7 @@ export const personalInfo = {
 };
 
 export const socialLinks = {
-  github: "https://github.com/mathiascortes",
+  github: "https://github.com/MathiasCortes",
   linkedin: "https://linkedin.com/in/mathiascortes", 
   twitter: "https://twitter.com/mathiascortes",
   instagram: "https://instagram.com/mathiascortes"
