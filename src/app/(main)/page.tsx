@@ -72,7 +72,7 @@ Actualmente no disponible.",
       title: "Buscando",
       company: "",
       period: "2022 - Presente",
-      description: "Me encuentro buscando mi primer experiencia laboral "
+      description: "Actualmente en formación y desarrollo de proyectos personales para mejorar mis habilidades en tecnologías web."
     }
   ];
 
