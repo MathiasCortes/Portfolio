@@ -31,7 +31,8 @@ const Home = () => {
   const projects = [
     {
       title: "E-commerce Platform",
-      description: "Plataforma completa de comercio electrónico con carrito de compras, sistema de pagos y panel administrativo.",
+      description: "Plataforma completa de comercio electrónico con carrito de compras, sistema de pagos y panel administrativo.
+Actualmente no disponible.",
       image: "/api/placeholder/400/250",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "#",
@@ -39,7 +40,8 @@ const Home = () => {
     },
     {
       title: "Task Management App",
-      description: "Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones push.",
+      description: "Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones push.
+Actualmente no disponible.",
       image: "/api/placeholder/400/250",
       technologies: ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
       liveUrl: "#",
@@ -47,7 +49,8 @@ const Home = () => {
     },
     {
       title: "Weather Dashboard",
-      description: "Dashboard meteorológico con gráficos interactivos y predicciones basadas en machine learning.",
+      description: "Dashboard meteorológico con gráficos interactivos y predicciones basadas en machine learning.
+Actualmente no disponible.",
       image: "/api/placeholder/400/250",
       technologies: ["React", "D3.js", "Python", "FastAPI"],
       liveUrl: "#",
@@ -66,22 +69,10 @@ const Home = () => {
 
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
+      title: "Buscando",
+      company: "",
       period: "2022 - Presente",
-      description: "Liderazgo de equipo de desarrollo, arquitectura de aplicaciones web escalables y mentoreo de desarrolladores junior."
-    },
-    {
-      title: "Frontend Developer",
-      company: "Digital Agency Co.",
-      period: "2020 - 2022",
-      description: "Desarrollo de interfaces de usuario responsivas y optimización de rendimiento web para clientes empresariales."
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Innovations",
-      period: "2018 - 2020",
-      description: "Desarrollo de funcionalidades web, integración de APIs y colaboración en proyectos ágiles."
+      description: "Me encuentro buscando mi primer experiencia laboral "
     }
   ];
 
