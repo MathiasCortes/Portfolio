@@ -4,7 +4,7 @@ import ProjectCard from "../components/molecules/ProjectCard";
 import SkillBar from "../components/molecules/SkillBar";
 import ContactForm from "../components/molecules/ContactForm";
 import Icon from "../components/atoms/SvgIcon";
-import { personalInfo, skills, projects, experiences, certifications, interests, stats } from "../../data/portfolioData";
+import { personalInfo, certifications, interests, stats } from "../../data/portfolioData";
 
 const Home = () => {
   useEffect(() => {
@@ -31,8 +31,7 @@ const Home = () => {
   const projects = [
     {
       title: "E-commerce Platform",
-      description: "Plataforma completa de comercio electrónico con carrito de compras, sistema de pagos y panel administrativo.
-Actualmente no disponible.",
+      description: "Plataforma completa de comercio electrónico con carrito de compras, sistema de pagos y panel administrativo. Actualmente no disponible.",
       image: "/api/placeholder/400/250",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "#",
@@ -40,8 +39,7 @@ Actualmente no disponible.",
     },
     {
       title: "Task Management App",
-      description: "Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones push.
-Actualmente no disponible.",
+      description: "Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones push. Actualmente no disponible.",
       image: "/api/placeholder/400/250",
       technologies: ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
       liveUrl: "#",
@@ -49,8 +47,7 @@ Actualmente no disponible.",
     },
     {
       title: "Weather Dashboard",
-      description: "Dashboard meteorológico con gráficos interactivos y predicciones basadas en machine learning.
-Actualmente no disponible.",
+      description: "Dashboard meteorológico con gráficos interactivos y predicciones basadas en machine learning. Actualmente no disponible.",
       image: "/api/placeholder/400/250",
       technologies: ["React", "D3.js", "Python", "FastAPI"],
       liveUrl: "#",
@@ -68,13 +65,20 @@ Actualmente no disponible.",
   ];
 
   const experiences = [
-    {
-      title: "Buscando",
-      company: "",
-      period: "2022 - Presente",
-      description: "Actualmente en formación y desarrollo de proyectos personales para mejorar mis habilidades en tecnologías web."
-    }
-  ];
+  {
+    title: "Buscando",
+    company: "Freelance",
+    period: "2022 - Presente",
+    location: "Uruguay",
+    type: "Local",
+    description: "Actualmente en formación y desarrollo de proyectos personales para mejorar mis habilidades en tecnologías web.",
+    achievements: [
+      "Desarrollé proyectos personales con React y Node.js",
+      "Mejoré mi conocimiento en bases de datos MongoDB y PostgreSQL"
+    ]
+  }
+];
+
 
   return (
     <div className="min-h-screen">
@@ -131,7 +135,7 @@ Actualmente no disponible.",
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Soy un desarrollador frontend junior de 20 años, apasionado por el aprendizaje 
+                  Soy un desarrollador frontend junior de 21 años, apasionado por el aprendizaje 
                   continuo y la mejora constante. Me especializo en HTML, CSS, JavaScript y React, 
                   con conocimientos en backend y testing.
                 </p>

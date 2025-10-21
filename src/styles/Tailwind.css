@@ -38,8 +38,10 @@ body {
 }
 
 .gradient-bg {
-    @apply bg-gradient-to-br from-cyan-500 via-gray-700 to-black;
+  @apply bg-gradient-to-b from-cyan-500 via-gray-800 to-black;
 }
+
+
 
 .glass-morphism {
     @apply bg-gray-900 bg-opacity-40 backdrop-blur-lg border border-cyan-500 border-opacity-20 rounded-xl;
@@ -102,7 +104,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%2322d3ee08" points="0,1000 1000,0 1000,1000"/></svg>');
     background-size: 100% 100%;
 }
 
