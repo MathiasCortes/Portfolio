@@ -14,19 +14,68 @@ export const personalInfo = {
 export const socialLinks = {
   github: "https://github.com/MathiasCortes",
   linkedin: "https://linkedin.com/in/mathiascortes", 
-  twitter: "https://twitter.com/mathiascortes",
+
   instagram: "https://instagram.com/mathiascortes"
 };
 
 export const skills = [
-  { name: "HTML", level: 85, category: "frontend", icon: "Gear" },
-  { name: "CSS", level: 80, category: "frontend", icon: "Gear" },
-  { name: "JavaScript", level: 75, category: "frontend", icon: "Gear" },
-  { name: "Java", level: 70, category: "backend", icon: "Gear" },
-  { name: "ReactJS", level: 65, category: "frontend", icon: "Gear" },
-  { name: "NodeJS", level: 60, category: "backend", icon: "Gear" },
-  { name: "UX/UI Design", level: 70, category: "design", icon: "Gear" },
-  { name: "Testing", level: 65, category: "tools", icon: "Gear" }
+  { 
+    name: "HTML", 
+    level: 85, 
+    category: "frontend", 
+    icon: "HTML5",
+    description: "Conocimientos sólidos en HTML5 semántico, accesibilidad y buenas prácticas para estructurar contenido web.",
+    technologies: ["HTML5", "Semantic HTML", "Accessibility", "Forms", "SEO"]
+  },
+  { 
+    name: "CSS", 
+    level: 80, 
+    category: "frontend", 
+    icon: "HTML5",
+    description: "Experiencia en CSS3, layouts modernos, animaciones y frameworks como Tailwind CSS para diseños responsivos.",
+    technologies: ["CSS3", "Flexbox", "Grid", "Tailwind CSS", "Responsive Design", "Animations"]
+  },
+  { 
+    name: "JavaScript", 
+    level: 75, 
+    category: "frontend", 
+    icon: "HTML5",
+    description: "Dominio de JavaScript ES6+, manipulación del DOM, eventos y asincronía para crear aplicaciones interactivas.",
+    technologies: ["ES6+", "DOM Manipulation", "Async/Await", "Fetch API", "Local Storage"]
+  },
+
+  { 
+    name: "ReactJS", 
+    level: 65, 
+    category: "frontend", 
+    icon: "HTML5",
+    description: "Experiencia en desarrollo de componentes, estado, hooks y enrutamiento con React para construir SPAs.",
+    technologies: ["React", "Hooks", "Context API", "React Router", "Component Lifecycle"]
+  },
+  { 
+    name: "NodeJS", 
+    level: 60, 
+    category: "backend", 
+    icon: "HTML5",
+    description: "Capacidad para crear APIs RESTful, manejar middleware y trabajar con bases de datos desde el backend.",
+    technologies: ["Node.js", "Express", "REST API", "Middleware", "NPM"]
+  },
+  { 
+    name: "UX/UI Design", 
+    level: 70, 
+    category: "design", 
+    icon: "HTML5",
+    description: "Habilidades en diseño de interfaces intuitivas, prototipado y principios de experiencia de usuario.",
+    technologies: ["Figma", "Wireframing", "Prototyping", "User Research", "Design Systems"]
+  },
+  { 
+    name: "Testing", 
+    level: 65, 
+    category: "tools", 
+    icon: "HTML5",
+    description: "Conocimientos en pruebas unitarias, integración y end-to-end para asegurar la calidad del código.",
+    technologies: ["Jest", "React Testing Library", "Cypress", "Unit Testing", "E2E Testing"]
+  }
 ];
 
 export const softSkills = [

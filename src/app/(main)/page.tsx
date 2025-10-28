@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/organisms/Navbar";
 import ProjectCard from "../components/molecules/ProjectCard";
-import SkillBar from "../components/molecules/SkillBar";
+import SkillCard from "../components/molecules/SkillCard";
 import ContactForm from "../components/molecules/ContactForm";
 import Icon from "../components/atoms/SvgIcon";
-import { personalInfo, certifications, interests, stats } from "../../data/portfolioData";
+import NodeBackground from "../components/atoms/NodeBackground";
+import { personalInfo, certifications, interests, stats, skills as portfolioSkills } from "../../data/portfolioData_new";
 
 const Home = () => {
   useEffect(() => {
@@ -55,15 +56,6 @@ const Home = () => {
     }
   ];
 
-  const skills = [
-    { name: "JavaScript", level: 95, category: "frontend", icon: "Gear" },
-    { name: "React", level: 90, category: "frontend", icon: "Gear" },
-    { name: "Node.js", level: 85, category: "backend", icon: "Gear" },
-    { name: "Python", level: 80, category: "backend", icon: "Gear" },
-    { name: "MongoDB", level: 75, category: "database", icon: "Gear" },
-    { name: "PostgreSQL", level: 70, category: "database", icon: "Gear" }
-  ];
-
   const experiences = [
   {
     title: "Buscando",
@@ -81,12 +73,13 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ position: 'relative', backgroundColor: 'transparent' }}>
+      <NodeBackground />
       <Navbar />
       
       {/* Hero Section */}
-      <section id="hero" className="hero-bg min-h-screen flex items-center justify-center relative">
-        <div className="absolute inset-0 bg-black bg-opacity-30" />
+      <section id="hero" className="min-h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0 bg-black bg-opacity-20" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -124,7 +117,7 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section-padding bg-gray-900">
+      <section id="about" className="section-padding bg-gray-900 bg-opacity-90">
         <div className="container mx-auto">
           <div className="animate-on-scroll">
             <h2 className="text-4xl font-bold text-center mb-4">
@@ -146,15 +139,15 @@ const Home = () => {
                 
                 <div className="flex flex-wrap gap-4">
                   <div className="glass-morphism px-6 py-3">
-                    <span className="text-2xl font-bold gradient-text">{stats.projectsCompleted}+</span>
+                    <span className="text-2xl font-bold gradient-text">3</span>
                     <p className="text-gray-300">Proyectos</p>
                   </div>
                   <div className="glass-morphism px-6 py-3">
-                    <span className="text-2xl font-bold gradient-text">{stats.certificationsEarned}</span>
+                    <span className="text-2xl font-bold gradient-text">5</span>
                     <p className="text-gray-300">Certificaciones</p>
                   </div>
                   <div className="glass-morphism px-6 py-3">
-                    <span className="text-2xl font-bold gradient-text">{stats.monthsExperience}</span>
+                    <span className="text-2xl font-bold gradient-text">0</span>
                     <p className="text-gray-300">Meses Exp.</p>
                   </div>
                 </div>
@@ -175,7 +168,7 @@ const Home = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="section-padding bg-black">
+      <section id="skills" className="section-padding bg-black bg-opacity-90">
         <div className="container mx-auto">
           <div className="animate-on-scroll">
             <h2 className="text-4xl font-bold text-center mb-4">
@@ -183,15 +176,14 @@ const Home = () => {
             </h2>
             <div className="section-divider mb-12" />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {skills.map((skill, index) => (
-                <SkillBar
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {portfolioSkills.map((skill) => (
+                <SkillCard
                   key={skill.name}
                   name={skill.name}
-                  level={skill.level}
                   category={skill.category}
                   icon={skill.icon}
-                  delay={index * 200}
+                  description={skill.description}
                 />
               ))}
             </div>
@@ -200,7 +192,7 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="section-padding bg-gray-900">
+      <section id="projects" className="section-padding bg-gray-900 bg-opacity-90">
         <div className="container mx-auto">
           <div className="animate-on-scroll">
             <h2 className="text-4xl font-bold text-center mb-4">
@@ -227,7 +219,7 @@ const Home = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="section-padding bg-black">
+      <section id="experience" className="section-padding bg-black bg-opacity-90">
         <div className="container mx-auto">
           <div className="animate-on-scroll">
             <h2 className="text-4xl font-bold text-center mb-4">
@@ -268,7 +260,7 @@ const Home = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="section-padding bg-gray-900">
+      <section id="certifications" className="section-padding bg-gray-900 bg-opacity-90">
         <div className="container mx-auto">
           <div className="animate-on-scroll">
             <h2 className="text-4xl font-bold text-center mb-4">
@@ -298,7 +290,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-padding bg-gray-900">
+      <section id="contact" className="section-padding bg-gray-900 bg-opacity-90">
         <div className="container mx-auto">
           <div className="animate-on-scroll">
             <h2 className="text-4xl font-bold text-center mb-4">
@@ -352,9 +344,7 @@ const Home = () => {
                   <a href="https://github.com/MathiasCortes" target="_blank" rel="noopener noreferrer" className="p-3 glass-morphism rounded-lg hover:scale-110 transition-transform" aria-label="GitHub Profile">
                     <Icon name="Gear" size={20} />
                   </a>
-                  <a href="https://twitter.com/mathias_cortes" target="_blank" rel="noopener noreferrer" className="p-3 glass-morphism rounded-lg hover:scale-110 transition-transform" aria-label="Twitter Profile">
-                    <Icon name="User" size={20} />
-                  </a>
+
                 </div>
               </div>
               
